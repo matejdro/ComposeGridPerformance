@@ -41,6 +41,7 @@ class BaselineProfileGenerator {
     fun generate() {
         rule.collect("net.composegridperformance") {
             imageGridJourney()
+            paginatedImagesGridJourney()
             paginatedColorsGridJourney()
         }
     }
@@ -52,6 +53,24 @@ internal fun MacrobenchmarkScope.imageGridJourney() {
 
     device.wait(Until.hasObject(By.res("menu_images_list")), 5_000)
     device.findObject(By.res("menu_images_list")).click()
+
+    device.wait(Until.hasObject(By.res("items_grid")), 5_000)
+    val contentList = device.findObject(By.res("items_grid"))
+    contentList?.wait(Until.hasObject(By.res("grid_item")), 5_000)
+
+    // Set gesture margin to avoid triggering gesture navigation.
+    contentList?.setGestureMargin(device.displayWidth / 3)
+    contentList?.fling(Direction.DOWN)
+    contentList?.fling(Direction.DOWN)
+    contentList?.let { device.waitForIdle() }
+}
+
+internal fun MacrobenchmarkScope.paginatedImagesGridJourney() {
+    pressHome()
+    startActivityAndWait()
+
+    device.wait(Until.hasObject(By.res("menu_paginated_images_list")), 5_000)
+    device.findObject(By.res("menu_paginated_colors_list")).click()
 
     device.wait(Until.hasObject(By.res("items_grid")), 5_000)
     val contentList = device.findObject(By.res("items_grid"))

@@ -11,6 +11,7 @@ To achieve best possible performance examples are kept as simple as possible, al
 
 Currently these examples are implemented:
 - network images grid with Coil AsyncImage loading
+- paginated network images grid with Coil AsyncImage loading
 - boxes with random colors grid
 - paginated boxes with random colors grid
 
@@ -24,6 +25,11 @@ Simple grid which instantly demonstrates that jank appears while scrolling the g
 
 ![jank_3](https://github.com/PauliusVal/ComposeGridPerformance/blob/main/images/images_grid_janky_frames_3.png?raw=true)
 
+## Paginated images grid with Coil loading issues
+
+Same issues as with simple image grid without pagination:
+![jank_4](https://github.com/PauliusVal/ComposeGridPerformance/blob/main/images/paginated_images_grid_janky_frames_1.png?raw=true)
+
 ## Colors grid issues
 
 No performance issues visible even without a baseline profile.
@@ -31,4 +37,4 @@ No performance issues visible even without a baseline profile.
 ## Paginated colors grid issues
 
 No noticeable performance issues though few janky frames are visible in profiler:
-![jank_4](https://github.com/PauliusVal/ComposeGridPerformance/blob/main/images/paginated_colors_grid_janky_frames_1.png?raw=true)
+![jank_5](https://github.com/PauliusVal/ComposeGridPerformance/blob/main/images/paginated_colors_grid_janky_frames_1.png?raw=true)

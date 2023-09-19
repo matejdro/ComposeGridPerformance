@@ -27,6 +27,13 @@ fun MenuScreen(navController: NavHostController) {
         }
 
         Button(
+            modifier = Modifier.testTag("menu_paginated_images_list"),
+            onClick = { navController.navigate(NavigationRoute.ImagesGrid.route) },
+        ) {
+            Text("Paginated Image List")
+        }
+
+        Button(
             modifier = Modifier.testTag("menu_colors_list"),
             onClick = { navController.navigate(NavigationRoute.ColorsGrid.route) },
         ) {

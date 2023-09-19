@@ -1,6 +1,6 @@
 # ComposeGridPerformance
 
-The goal of this project is to demonstrate performance issues related to Compose grid performance.
+The goal of this project is to demonstrate performance issues related to Compose grid.
 
 To achieve best possible performance examples are kept as simple as possible, also:
 - verified in R8 release mode
@@ -16,7 +16,7 @@ Currently two examples are implemented:
 
 ## Images grid with Coil loading issues
 
-Simple grid which instantly demonstrates that jank appears while scrolling the grid. Noticeable both bye human eye and in profiler:
+Simple grid which instantly demonstrates that jank appears while scrolling the grid. Noticeable both by human eye and in profiler:
 ![jank_1](https://github.com/PauliusVal/ComposeGridPerformance/blob/main/images/images_grid_janky_frames_1.png?raw=true)
 
 ![jank_2](https://github.com/PauliusVal/ComposeGridPerformance/blob/main/images/images_grid_janky_frames_2.png?raw=true)

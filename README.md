@@ -9,9 +9,10 @@ To achieve best possible performance examples are kept as simple as possible, al
 - unique and stable item keys applied for grid items
 
 
-Currently two examples are implemented:
+Currently these examples are implemented:
 - network images grid with Coil AsyncImage loading
 - boxes with random colors grid
+- paginated boxes with random colors grid
 
 
 ## Images grid with Coil loading issues
@@ -26,3 +27,8 @@ Simple grid which instantly demonstrates that jank appears while scrolling the g
 ## Colors grid issues
 
 No performance issues visible even without a baseline profile.
+
+## Paginated colors grid issues
+
+No noticeable performance issues though few janky frames are visible in profiler:
+![jank_4](https://github.com/PauliusVal/ComposeGridPerformance/blob/main/images/paginated_colors_grid_janky_frames_1.png?raw=true)

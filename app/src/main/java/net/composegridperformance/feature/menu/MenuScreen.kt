@@ -32,5 +32,12 @@ fun MenuScreen(navController: NavHostController) {
         ) {
             Text("Color List")
         }
+
+        Button(
+            modifier = Modifier.testTag("menu_paginated_colors_list"),
+            onClick = { navController.navigate(NavigationRoute.ColorsGrid.route) },
+        ) {
+            Text("Paginated Color List")
+        }
     }
 }

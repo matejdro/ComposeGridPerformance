@@ -20,6 +20,7 @@ import dagger.hilt.android.AndroidEntryPoint
 import net.composegridperformance.feature.colors.ColorsGridScreen
 import net.composegridperformance.feature.colorspaginated.ColorsPaginatedGridScreen
 import net.composegridperformance.feature.images.ImagesGridScreen
+import net.composegridperformance.feature.imagesglide.ImagesGlideGridScreen
 import net.composegridperformance.feature.imagespaginated.ImagesPaginatedGridScreen
 import net.composegridperformance.feature.menu.MenuScreen
 import net.composegridperformance.navigation.NavigationRoute
@@ -54,6 +55,9 @@ class MainActivity : ComponentActivity() {
             }
             composable(NavigationRoute.ImagesGrid.route) {
                 ImagesGridScreen()
+            }
+            composable(NavigationRoute.GlideImagesGrid.route) {
+                ImagesGlideGridScreen()
             }
             composable(NavigationRoute.PaginatedImagesGrid.route) {
                 ImagesPaginatedGridScreen()

@@ -30,6 +30,10 @@ Simple grid which instantly demonstrates that jank appears while scrolling the g
 Same issues as with simple image grid without pagination:
 ![jank_4](https://github.com/PauliusVal/ComposeGridPerformance/blob/main/images/paginated_images_grid_janky_frames_1.png?raw=true)
 
+## Images grid with Glide loading issues
+
+No performance issues visible.
+
 ## Colors grid issues
 
 No performance issues visible even without a baseline profile.

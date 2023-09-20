@@ -38,8 +38,3 @@ No noticeable performance issues though few janky frames are visible in profiler
 ## Colors grid issues
 
 No performance issues visible even without a baseline profile.
-
-## Paginated colors grid issues
-
-No noticeable performance issues though few janky frames are visible in profiler:
-![jank_6](https://github.com/PauliusVal/ComposeGridPerformance/blob/main/images/paginated_colors_grid_janky_frames_1.png?raw=true)

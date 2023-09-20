@@ -22,7 +22,7 @@ class GenericPagingSource<Item : Any>(
                 LoadResult.Page(
                     data = pageResult,
                     prevKey = null,
-                    nextKey = if (pageResult.size < params.loadSize) null else nextPage + 1
+                    nextKey = if (pageResult.size < pageSize) null else nextPage + 1
                 )
             }
 

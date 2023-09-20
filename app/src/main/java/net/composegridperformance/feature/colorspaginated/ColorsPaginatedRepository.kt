@@ -15,7 +15,7 @@ class ColorsPaginatedRepository @Inject constructor() {
         pageIndex: Int,
         pageSize: Int,
     ): List<Int> = data.subList(
-        fromIndex = pageIndex,
-        toIndex = pageIndex * pageSize,
+        fromIndex = pageIndex * pageSize,
+        toIndex = (pageIndex + 1) * pageSize,
     )
 }

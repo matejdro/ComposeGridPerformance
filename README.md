@@ -32,7 +32,8 @@ Same issues as with simple image grid without pagination:
 
 ## Images grid with Glide loading issues
 
-No performance issues visible.
+No noticeable performance issues though few janky frames are visible in profiler:
+![jank_5](https://github.com/PauliusVal/ComposeGridPerformance/blob/main/images/glide_images_grid_janky_frames_1.png?raw=true)
 
 ## Colors grid issues
 
@@ -41,4 +42,4 @@ No performance issues visible even without a baseline profile.
 ## Paginated colors grid issues
 
 No noticeable performance issues though few janky frames are visible in profiler:
-![jank_5](https://github.com/PauliusVal/ComposeGridPerformance/blob/main/images/paginated_colors_grid_janky_frames_1.png?raw=true)
+![jank_6](https://github.com/PauliusVal/ComposeGridPerformance/blob/main/images/paginated_colors_grid_janky_frames_1.png?raw=true)

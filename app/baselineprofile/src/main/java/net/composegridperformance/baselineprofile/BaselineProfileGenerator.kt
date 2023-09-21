@@ -40,74 +40,22 @@ class BaselineProfileGenerator {
     @Test
     fun generate() {
         rule.collect("net.composegridperformance") {
-            coilImageGridJourney()
-            glideImageGridJourney()
-            paginatedImagesGridJourney()
-            paginatedColorsGridJourney()
+            gridJourney("menu_images_list")
+            gridJourney("menu_paginated_images_list")
+            gridJourney("menu_glide_images_list")
+            gridJourney("menu_colors_list")
+            gridJourney("menu_paginated_colors_list")
+            gridJourney("menu_colors_modules_list")
         }
     }
 }
 
-internal fun MacrobenchmarkScope.coilImageGridJourney() {
+internal fun MacrobenchmarkScope.gridJourney(menuEntry: String) {
     pressHome()
     startActivityAndWait()
 
-    device.wait(Until.hasObject(By.res("menu_images_list")), 5_000)
-    device.findObject(By.res("menu_images_list")).click()
-
-    device.wait(Until.hasObject(By.res("items_grid")), 5_000)
-    val contentList = device.findObject(By.res("items_grid"))
-    contentList?.wait(Until.hasObject(By.res("grid_item")), 5_000)
-
-    // Set gesture margin to avoid triggering gesture navigation.
-    contentList?.setGestureMargin(device.displayWidth / 3)
-    contentList?.fling(Direction.DOWN)
-    contentList?.fling(Direction.DOWN)
-    contentList?.let { device.waitForIdle() }
-}
-
-internal fun MacrobenchmarkScope.glideImageGridJourney() {
-    pressHome()
-    startActivityAndWait()
-
-    device.wait(Until.hasObject(By.res("menu_glide_images_list")), 5_000)
-    device.findObject(By.res("menu_images_list")).click()
-
-    device.wait(Until.hasObject(By.res("items_grid")), 5_000)
-    val contentList = device.findObject(By.res("items_grid"))
-    contentList?.wait(Until.hasObject(By.res("grid_item")), 5_000)
-
-    // Set gesture margin to avoid triggering gesture navigation.
-    contentList?.setGestureMargin(device.displayWidth / 3)
-    contentList?.fling(Direction.DOWN)
-    contentList?.fling(Direction.DOWN)
-    contentList?.let { device.waitForIdle() }
-}
-
-internal fun MacrobenchmarkScope.paginatedImagesGridJourney() {
-    pressHome()
-    startActivityAndWait()
-
-    device.wait(Until.hasObject(By.res("menu_paginated_images_list")), 5_000)
-    device.findObject(By.res("menu_paginated_colors_list")).click()
-
-    device.wait(Until.hasObject(By.res("items_grid")), 5_000)
-    val contentList = device.findObject(By.res("items_grid"))
-    contentList?.wait(Until.hasObject(By.res("grid_item")), 5_000)
-
-    // Set gesture margin to avoid triggering gesture navigation.
-    contentList?.setGestureMargin(device.displayWidth / 3)
-    contentList?.fling(Direction.DOWN)
-    contentList?.fling(Direction.DOWN)
-    contentList?.let { device.waitForIdle() }
-}
-
-internal fun MacrobenchmarkScope.paginatedColorsGridJourney() {
-    pressHome()
-    startActivityAndWait()
-
-    device.wait(Until.hasObject(By.res("menu_paginated_colors_list")), 5_000)
-    device.findObject(By.res("menu_paginated_colors_list")).click()
+    device.wait(Until.hasObject(By.res(menuEntry)), 5_000)
+    device.findObject(By.res(menuEntry)).click()
 
     device.wait(Until.hasObject(By.res("items_grid")), 5_000)
     val contentList = device.findObject(By.res("items_grid"))

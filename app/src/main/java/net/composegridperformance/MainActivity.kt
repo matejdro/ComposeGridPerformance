@@ -18,6 +18,7 @@ import androidx.navigation.compose.composable
 import androidx.navigation.compose.rememberNavController
 import dagger.hilt.android.AndroidEntryPoint
 import net.composegridperformance.feature.colors.ColorsGridScreen
+import net.composegridperformance.feature.colorsmodules.ColorsModulesGridScreen
 import net.composegridperformance.feature.colorspaginated.ColorsPaginatedGridScreen
 import net.composegridperformance.feature.images.ImagesGridScreen
 import net.composegridperformance.feature.imagesglide.ImagesGlideGridScreen
@@ -67,6 +68,9 @@ class MainActivity : ComponentActivity() {
             }
             composable(NavigationRoute.PaginatedColorsGrid.route) {
                 ColorsPaginatedGridScreen()
+            }
+            composable(NavigationRoute.ColorsModulesGrid.route) {
+                ColorsModulesGridScreen()
             }
         }
     }

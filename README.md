@@ -10,13 +10,15 @@ To achieve best possible performance examples are kept as simple as possible, al
 
 
 Currently these examples are implemented:
-- network images grid with Coil AsyncImage loading
-- paginated network images grid with Coil AsyncImage loading
+- network images grid with **Coil** AsyncImage loading
+- paginated network images grid with **Coil** AsyncImage loading
+- network images grid with **Glide** AsyncImage loading
 - boxes with random colors grid
 - paginated boxes with random colors grid
+- modularized (2 static horizontal lists + paginated vertical list) boxes with random colors grid
 
 
-## Images grid with Coil loading issues
+## Images grid with **Coil** loading issues
 
 Simple grid which instantly demonstrates that jank appears while scrolling the grid. Noticeable both by human eye and in profiler:
 ![jank_1](https://github.com/PauliusVal/ComposeGridPerformance/blob/main/images/images_grid_janky_frames_1.png?raw=true)
@@ -25,12 +27,12 @@ Simple grid which instantly demonstrates that jank appears while scrolling the g
 
 ![jank_3](https://github.com/PauliusVal/ComposeGridPerformance/blob/main/images/images_grid_janky_frames_3.png?raw=true)
 
-## Paginated images grid with Coil loading issues
+## Paginated images grid with **Coil** loading issues
 
 Same issues as with simple image grid without pagination:
 ![jank_4](https://github.com/PauliusVal/ComposeGridPerformance/blob/main/images/paginated_images_grid_janky_frames_1.png?raw=true)
 
-## Images grid with Glide loading issues
+## Images grid with **Glide** loading issues
 
 No noticeable performance issues though few janky frames are visible in profiler:
 ![jank_5](https://github.com/PauliusVal/ComposeGridPerformance/blob/main/images/glide_images_grid_janky_frames_1.png?raw=true)
@@ -43,3 +45,7 @@ No performance issues visible even without a baseline profile.
 
 No noticeable performance issues though janky frames are visible in profiler:
 ![jank_6](https://github.com/PauliusVal/ComposeGridPerformance/blob/main/images/paginated_colors_grid_janky_frames_1.png?raw=true)
+
+## Modularized colors grid issues
+
+Same janky frames as with regular paginated grid.

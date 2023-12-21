@@ -16,3 +16,4 @@ dependencyResolutionManagement {
 rootProject.name = "ComposeGridPerformance"
 include(":app")
 include(":app:baselineprofile")
+include(":app:benchmark")
